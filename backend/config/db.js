@@ -5,7 +5,6 @@ const connectDatabase = ()=>{
     }).catch((err)=>{
         console.log("Not able to connect") ;
     })
-    
 }
 
 module.exports = connectDatabase ;
