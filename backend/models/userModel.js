@@ -59,5 +59,9 @@ userSchema.methods.getJWTToken = function () {
     })
 }
 
+//  Check bcrypt password 
+userSchema.methods.compareWithPassword =  function (enteredPassword) {
+    return  bcrypt.compare(enteredPassword,this.password) ;
+}
 
 module.exports = mongoose.model("User",userSchema) ;
