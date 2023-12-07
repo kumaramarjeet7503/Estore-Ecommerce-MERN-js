@@ -94,3 +94,25 @@ exports.forgotPassword = catchAsyncErrors(async (req,res,next)=>{
     }
 
 })
+
+exports.resetPassword = catchAsyncErrors(async (req,res,next)=>{
+
+    const resetPasswordToken =  crypto.createHash("sha256").update(resetToken).digest("hex") ;
+    const user = await User.findOne({resetPasswordToken,resetPasswordExpire:{$gt:Date.now()}})
+
+    if(!user){
+        return next(new ErrorHandler("Reset password token is invalid")) ;
+    }
+
+    if(req.body.password != req.body.confirmPasswor){
+        return next(new ErrorHandler("Password does not match")) ;
+    }
+
+    user.password = req.body.password ;
+    user.resetPasswordToken = undefined ;
+    user.resetPasswordExpire = undefined ;
+
+    await user.save({validateBeforeSave:false}) ;
+    sendToken(user,200,res) ;
+
+})
