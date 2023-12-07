@@ -4,13 +4,13 @@ const { isAuthenticatedUser } = require("../middleware/auth");
 const router = express.Router() ;
 
 //  Get product with success response
- router.route("/products").get(isAuthenticatedUser,getAllProducts);
+ router.route("/products").get(getAllProducts);
 //  Route to create new product
-router.route("/product/new").post(createProduct);
+router.route("/product/new").post(isAuthenticatedUser,createProduct);
 //  Route to update product
-router.route("/product/update/:id").post(updateProduct);
+router.route("/product/update/:id").post(isAuthenticatedUser,updateProduct);
 //  Route to delete product
-router.route("/product/delete/:id").delete(deleteProduct);
+router.route("/product/delete/:id").delete(isAuthenticatedUser,deleteProduct);
 //  Get Product details
-router.route("/product/get/:id").get(getProductDetails);
+router.route("/product/get/:id").get(isAuthenticatedUser,getProductDetails);
 module.exports = router ;
