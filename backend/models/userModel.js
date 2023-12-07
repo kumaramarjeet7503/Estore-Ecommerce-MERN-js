@@ -68,8 +68,10 @@ userSchema.methods.compareWithPassword =  function (enteredPassword) {
 //  Generate random string for reset password token 
 userSchema.methods.getResetPasswordToken = function(){
     //  Generating token
-    const resetToken = crypto.createHash("sha256").update(resetToken).digest("hex") ;
-    this.resetPasswordToken = resetToken ;
+    const resetToken = crypto.randomBytes(20).toString("hex") ;
+    //  Hashing password to user model
+    this.resetPasswordToken=   crypto.createHash("sha256").update(resetToken).digest("hex") ;
+    
     this.resetPasswordExpire = Date.now() + 15 * 60 * 1000 ;
     return resetToken ;
 }

@@ -1,0 +1,270 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ecom",
+    "dateExported": "2023-12-06T11:06:05.745Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "Product",
+            "containerId": "",
+            "created": "2023-12-04T11:25:15.158Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
+            "name": "user",
+            "containerId": "",
+            "created": "2023-12-05T08:20:22.910Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "70de6b7c-6ed5-4735-a6b0-db0fa0898966",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "create-product",
+            "url": "localhost:4000/api/v1/product/new",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-29T11:03:56.351Z",
+            "modified": "2023-12-06T09:28:13.960Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Sample\",\n  \"description\" : \"Easy to watch type\",\n  \"price\":120,\n  \"images\":\n  [\n    {\n      \"public_id\":\"abcd image\",\n      \"url\":\"abc\"\n    }\n  ],\n  \"category\":\"Bottles\",\n  \"stock\":10\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "601a10e7-5110-4f26-b036-a1e6af7e8ba3",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "update-product",
+            "url": "localhost:4000/api/v1/product/update/656db23bf2fe1e0d6cfd5d44",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-12-04T11:18:42.785Z",
+            "modified": "2023-12-04T11:21:22.478Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Mouse\",\n  \"description\" : \"Easy to watch type\",\n  \"price\":23000,\n  \"images\":\n  [\n    {\n      \"public_id\":\"abcd image\",\n      \"url\":\"abc\"\n    }\n  ],\n  \"category\":\"keyboard\",\n  \"stock\":10\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2a11f815-6390-426a-a6f4-ae16c7a37c3e",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "delete-product",
+            "url": "localhost:4000/api/v1/product/delete/656db23bf2fe1e0d6cfd5d44",
+            "method": "DELETE",
+            "sortNum": 25000,
+            "created": "2023-12-04T11:29:51.430Z",
+            "modified": "2023-12-04T11:30:25.927Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f25bd30d-25be-4373-92cf-b19c1c3a1ad6",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "get-products",
+            "url": "localhost:4000/api/v1/products",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-28T11:33:47.819Z",
+            "modified": "2023-12-05T06:36:27.043Z",
+            "headers": [
+                {
+                    "name": "keyword",
+                    "value": "samosa"
+                },
+                {
+                    "name": "page",
+                    "value": "2"
+                },
+                {
+                    "name": "limit",
+                    "value": "10"
+                }
+            ],
+            "params": [
+                {
+                    "name": "keyword",
+                    "value": "Keyboard",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "00017f7c-ded4-440d-862d-2f3ceff7c014",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "search-products",
+            "url": "localhost:4000/api/v1/products?page=3",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2023-12-05T06:44:53.489Z",
+            "modified": "2023-12-06T09:29:11.345Z",
+            "headers": [
+                {
+                    "name": "keyword",
+                    "value": "samosa"
+                },
+                {
+                    "name": "page",
+                    "value": "2"
+                },
+                {
+                    "name": "limit",
+                    "value": "10"
+                }
+            ],
+            "params": [
+                {
+                    "name": "keyword",
+                    "value": "Keyboard",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "3",
+                    "isPath": false
+                },
+                {
+                    "name": "limit[gt]",
+                    "value": "100",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "limit[lt]",
+                    "value": "200",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "price[lt]",
+                    "value": "2300000",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "price[gt]",
+                    "value": "2000",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "e92f72dc-f3f5-438c-b5b5-383adec78bdc",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "get-product",
+            "url": "localhost:4000/api/v1/product/get/65671befc9011653589db9b3",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-12-04T11:40:01.048Z",
+            "modified": "2023-12-05T05:54:59.271Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6d4eabd6-3167-4f46-b7db-c79891f82c88",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
+            "name": "register-user",
+            "url": "localhost:4000/api/v1/user/new",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-12-05T08:20:32.233Z",
+            "modified": "2023-12-06T10:41:19.584Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"name\":\"samiksha\",\n\"email\":\"samiksha7503@gmail.com\",\n\"password\":\"xtreme@123\",\n\"url\":\"www.gmail.com\",\n\"role\":\"user\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9faaa613-4c78-4fb4-982a-67e838ce1a0d",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
+            "name": "login-user",
+            "url": "localhost:4000/api/v1/user/login",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-12-05T10:52:59.553Z",
+            "modified": "2023-12-06T09:21:26.717Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"admin@gmail.com\",\n  \"password\":\"xtreme@123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "587b20c6-23cc-41d7-bdd4-8fc7057d1ec9",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
+            "name": "logout",
+            "url": "localhost:4000/api/v1/user/logout",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-12-06T07:19:14.152Z",
+            "modified": "2023-12-06T07:19:29.221Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b3564858-22f7-4c7b-8155-9b2cf63e9c4a",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
+            "name": "reset-password",
+            "url": "localhost:4000/api/v1/user/resetpass",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-12-06T10:39:55.056Z",
+            "modified": "2023-12-06T10:41:38.303Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"samiksha7503@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
