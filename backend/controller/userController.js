@@ -168,3 +168,60 @@ exports.updateProfile = catchAsyncErrors(async (req,res,next)=>{
         user
    })
 })
+
+//  Get list of all users --admin
+exports.getAllUsers = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.find() ;
+
+    res.status(200).json({
+        success:true,
+        user
+    })
+})
+
+//  Get user details by id --admin
+exports.getSingleUser = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.params.id) ;
+    if(!user){
+        return next(new ErrorHandler(`User not found with id: ${req.params.id} `,404)) ;
+    }
+
+    res.status(200).json({
+        success:true,
+        user
+    })
+})
+
+
+//  Functionality to update role --admin
+exports.updateRole = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.params.id) ;
+    if(!user){
+       return next(new ErrorHandler(`User not exists with this id ${req.params.id}`,400)) ;
+    }
+
+    const updateUser = {name:req.body.name,email:req.body.email,role:req.body.role} ;
+    await User.findByIdAndUpdate(req.user.id,updateUser,{
+        new:true,
+        runValidators:true,
+        useFindandModify:false
+    })
+
+   res.status(200).json({
+        success:true,
+        user
+   })
+})
+
+//  Delete user by id --admin
+exports.deleteUser = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.params.id) ;
+    if(!user){
+        return next(new ErrorHandler(`User not found with id: ${req.params.id} `,404)) ;
+    }
+    await user.deleteOne() ;
+    res.status(200).json({
+        success:true,
+        message:"User deleted successfully"
+    })
+})
