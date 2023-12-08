@@ -6,7 +6,6 @@ const sendEmail = require("../utils/sendEmail.js")
 
 
 //  Register user function
-
 exports.registerUser = catchAsyncErrors( async (req,res,next)=>{
     const {name,email,password,role} = req.body ;
     const user = await User.create({
@@ -94,7 +93,7 @@ exports.forgotPassword = catchAsyncErrors(async (req,res,next)=>{
     }
 
 })
-
+//  reset password functionality
 exports.resetPassword = catchAsyncErrors(async (req,res,next)=>{
 
     const resetPasswordToken =  crypto.createHash("sha256").update(resetToken).digest("hex") ;
@@ -115,4 +114,57 @@ exports.resetPassword = catchAsyncErrors(async (req,res,next)=>{
     await user.save({validateBeforeSave:false}) ;
     sendToken(user,200,res) ;
 
+}) ;
+
+//  Get user details functionality
+exports.getUser = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.user.id) ;
+    if(!user){
+       return next(new ErrorHandler("Please login with your credentials!",400)) ;
+    }
+    res.status(200).json({
+        success:true,
+        user
+    })
+})
+
+//  Functionality to change password
+exports.changePassword = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.user.id).select("+password") ;
+    if(!user){
+       return next(new ErrorHandler("Please login with your credentials!",400)) ;
+    }
+    //  Checked password bcrypt using function compare with password
+    const matched = user.compareWithPassword(req.body.oldPassword) ;
+    if(!matched)
+    {
+        return next(new ErrorHandler("Password does not match with existing password!",400)) ;
+    }
+    if( req.body.confirmPassword != req.body.newPassword)
+    {
+        return next(new ErrorHandler("Confirm password does not match with new password",400)) ;
+    }
+    user.password = req.body.newPassword ;
+    user.save() ;
+    sendToken(user,200,res) ;
+})
+
+//  Functionality to update profile
+exports.updateProfile = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.user.id).select("+password") ;
+    if(!user){
+       return next(new ErrorHandler("Please login with your credentials!",400)) ;
+    }
+
+    const updateUser = {name:req.body.name,email:req.body.email} ;
+    await User.findByIdAndUpdate(req.user.id,updateUser,{
+        new:true,
+        runValidators:true,
+        useFindandModify:false
+    })
+
+   res.status(200).json({
+        success:true,
+        user
+   })
 })
