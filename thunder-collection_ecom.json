@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "ecom",
-    "dateExported": "2023-12-06T11:06:05.745Z",
+    "dateExported": "2023-12-09T07:15:32.034Z",
     "version": "1.1",
     "folders": [
         {
@@ -17,9 +17,68 @@
             "containerId": "",
             "created": "2023-12-05T08:20:22.910Z",
             "sortNum": 20000
+        },
+        {
+            "_id": "3e800cd7-6f11-4e19-8663-f08aadd80d85",
+            "name": "admin",
+            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
+            "created": "2023-12-07T06:41:16.976Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "c085c0e7-adfc-4f73-ac2d-f1fc4c325c2d",
+            "name": "authentication",
+            "containerId": "",
+            "created": "2023-12-08T05:38:46.059Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "31ad6f2a-fe34-4d81-8c0e-ebb59fef715d",
+            "name": "Order",
+            "containerId": "",
+            "created": "2023-12-08T07:40:50.373Z",
+            "sortNum": 50000
         }
     ],
     "requests": [
+        {
+            "_id": "6d4eabd6-3167-4f46-b7db-c79891f82c88",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c085c0e7-adfc-4f73-ac2d-f1fc4c325c2d",
+            "name": "register-user",
+            "url": "localhost:4000/api/v1/user/new",
+            "method": "POST",
+            "sortNum": 1250,
+            "created": "2023-12-05T08:20:32.233Z",
+            "modified": "2023-12-07T07:03:58.752Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"name\":\"ravi\",\n\"email\":\"ravi@gmail.com\",\n\"password\":\"xtreme@123\",\n\"url\":\"www.gmail.com\",\n\"role\":\"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "714305c7-dd73-456a-838c-046cd323b163",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c085c0e7-adfc-4f73-ac2d-f1fc4c325c2d",
+            "name": "change-password",
+            "url": "localhost:4000/api/v1/user/changepass",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2023-12-07T05:31:31.787Z",
+            "modified": "2023-12-07T05:49:06.447Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"oldPassword\":\"abcd@1234\",\n  \"newPassword\":\"xtreme@123\",\n  \"confirmPassword\":\"xtreme@123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
         {
             "_id": "70de6b7c-6ed5-4735-a6b0-db0fa0898966",
             "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
@@ -40,6 +99,44 @@
             "tests": []
         },
         {
+            "_id": "911ba164-3f40-453d-85e3-b1bb5c85f32f",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c085c0e7-adfc-4f73-ac2d-f1fc4c325c2d",
+            "name": "reset-password",
+            "url": "localhost:4000/api/v1/user/resetpass",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2023-12-06T11:59:09.998Z",
+            "modified": "2023-12-06T11:59:40.025Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"token\":\"dsfakdjfald\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "10e24fdd-db39-4c08-9f07-45991b6a0ae1",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "create-product-review",
+            "url": "localhost:4000/api/v1/product/create/review",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-12-08T05:15:57.960Z",
+            "modified": "2023-12-08T06:58:27.770Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"rating\": 2,\n\"productId\":\"656ed017c696541ebbf28107\",\n\"comments\": \"This is a very oddd product\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "601a10e7-5110-4f26-b036-a1e6af7e8ba3",
             "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
             "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
@@ -54,6 +151,25 @@
             "body": {
                 "type": "json",
                 "raw": "{\n  \"name\":\"Mouse\",\n  \"description\" : \"Easy to watch type\",\n  \"price\":23000,\n  \"images\":\n  [\n    {\n      \"public_id\":\"abcd image\",\n      \"url\":\"abc\"\n    }\n  ],\n  \"category\":\"keyboard\",\n  \"stock\":10\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b3564858-22f7-4c7b-8155-9b2cf63e9c4a",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c085c0e7-adfc-4f73-ac2d-f1fc4c325c2d",
+            "name": "forgot-password",
+            "url": "localhost:4000/api/v1/user/forgotpass",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-12-06T10:39:55.056Z",
+            "modified": "2023-12-07T05:02:00.726Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"nishu7982348359@gmail.com\"\n}",
                 "form": []
             },
             "tests": []
@@ -113,6 +229,91 @@
                     "name": "limit",
                     "value": "",
                     "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "587b20c6-23cc-41d7-bdd4-8fc7057d1ec9",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c085c0e7-adfc-4f73-ac2d-f1fc4c325c2d",
+            "name": "logout",
+            "url": "localhost:4000/api/v1/user/logout",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-12-06T07:19:14.152Z",
+            "modified": "2023-12-06T07:19:29.221Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e839f8fd-dd3f-43ae-b6ef-5e94af160db8",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "get-product-review",
+            "url": "localhost:4000/api/v1/product/review?id=65671befc9011653589db9b3",
+            "method": "GET",
+            "sortNum": 32500,
+            "created": "2023-12-08T05:47:51.876Z",
+            "modified": "2023-12-08T07:01:25.587Z",
+            "headers": [
+                {
+                    "name": "keyword",
+                    "value": "samosa"
+                },
+                {
+                    "name": "page",
+                    "value": "2"
+                },
+                {
+                    "name": "limit",
+                    "value": "10"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "65671befc9011653589db9b3",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "913a6e3c-f1bd-4e7f-a81d-6f22520a9813",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "a2a6aaae-b041-4888-a8aa-2321a0f869f1",
+            "name": "delete-product-review",
+            "url": "localhost:4000/api/v1/product/review?id=6572a775887cd9ba2c7e1890&productId=65671befc9011653589db9b3",
+            "method": "DELETE",
+            "sortNum": 33750,
+            "created": "2023-12-08T06:31:52.375Z",
+            "modified": "2023-12-08T06:32:34.097Z",
+            "headers": [
+                {
+                    "name": "keyword",
+                    "value": "samosa"
+                },
+                {
+                    "name": "page",
+                    "value": "2"
+                },
+                {
+                    "name": "limit",
+                    "value": "10"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6572a775887cd9ba2c7e1890",
+                    "isPath": false
+                },
+                {
+                    "name": "productId",
+                    "value": "65671befc9011653589db9b3",
                     "isPath": false
                 }
             ],
@@ -190,28 +391,42 @@
             "method": "GET",
             "sortNum": 40000,
             "created": "2023-12-04T11:40:01.048Z",
-            "modified": "2023-12-05T05:54:59.271Z",
+            "modified": "2023-12-09T07:03:32.905Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "6d4eabd6-3167-4f46-b7db-c79891f82c88",
+            "_id": "3d2e4b2a-5b21-4bb7-85d1-ad295f1d4b28",
             "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
             "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
-            "name": "register-user",
-            "url": "localhost:4000/api/v1/user/new",
-            "method": "POST",
-            "sortNum": 50000,
-            "created": "2023-12-05T08:20:32.233Z",
-            "modified": "2023-12-06T10:41:19.584Z",
+            "name": "update-profile",
+            "url": "localhost:4000/api/v1/user/update/profile",
+            "method": "PUT",
+            "sortNum": 62500,
+            "created": "2023-12-07T06:02:37.476Z",
+            "modified": "2023-12-07T06:05:45.872Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n\"name\":\"samiksha\",\n\"email\":\"samiksha7503@gmail.com\",\n\"password\":\"xtreme@123\",\n\"url\":\"www.gmail.com\",\n\"role\":\"user\"\n}",
+                "raw": "{\n   \"name\":\"shikha\",\n  \"email\":\"user@gmail.com\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "292f94fb-8378-44b4-b0e0-df7cee1ca7bc",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
+            "name": "get-user-details",
+            "url": "localhost:4000/api/v1/user/details",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-12-07T05:10:59.472Z",
+            "modified": "2023-12-07T05:11:28.779Z",
+            "headers": [],
+            "params": [],
             "tests": []
         },
         {
@@ -221,9 +436,9 @@
             "name": "login-user",
             "url": "localhost:4000/api/v1/user/login",
             "method": "POST",
-            "sortNum": 60000,
+            "sortNum": 110000,
             "created": "2023-12-05T10:52:59.553Z",
-            "modified": "2023-12-06T09:21:26.717Z",
+            "modified": "2023-12-09T05:50:26.971Z",
             "headers": [],
             "params": [],
             "body": {
@@ -234,34 +449,156 @@
             "tests": []
         },
         {
-            "_id": "587b20c6-23cc-41d7-bdd4-8fc7057d1ec9",
+            "_id": "0a5fae5d-4db4-4b8a-b8f6-fbf46ba4424e",
             "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
-            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
-            "name": "logout",
-            "url": "localhost:4000/api/v1/user/logout",
+            "containerId": "3e800cd7-6f11-4e19-8663-f08aadd80d85",
+            "name": "get-all-users",
+            "url": "localhost:4000/api/v1/admin/users/all",
             "method": "GET",
-            "sortNum": 70000,
-            "created": "2023-12-06T07:19:14.152Z",
-            "modified": "2023-12-06T07:19:29.221Z",
+            "sortNum": 110000,
+            "created": "2023-12-07T06:41:28.343Z",
+            "modified": "2023-12-07T06:42:03.183Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "b3564858-22f7-4c7b-8155-9b2cf63e9c4a",
+            "_id": "55683d19-9faf-4a21-a3ac-f19a6226614b",
             "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
-            "containerId": "c86c8a49-3f69-47c4-9e39-c3ce76a93374",
-            "name": "reset-password",
-            "url": "localhost:4000/api/v1/user/resetpass",
-            "method": "POST",
-            "sortNum": 80000,
-            "created": "2023-12-06T10:39:55.056Z",
-            "modified": "2023-12-06T10:41:38.303Z",
+            "containerId": "3e800cd7-6f11-4e19-8663-f08aadd80d85",
+            "name": "update-user-role",
+            "url": "localhost:4000/api/v1/admin/role/update/65716e5e85b8f598b0dcc0a6",
+            "method": "PUT",
+            "sortNum": 115000,
+            "created": "2023-12-07T07:01:43.625Z",
+            "modified": "2023-12-07T07:05:06.022Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\":\"samiksha7503@gmail.com\"\n}",
+                "raw": "{\n  \"name\":\"ravi\",\n  \"email\":\"ravi@gmail.com\",\n  \"role\":\"user\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f46f405d-98dd-42d9-91ff-ccdf7907245e",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "3e800cd7-6f11-4e19-8663-f08aadd80d85",
+            "name": "get-user-by-id",
+            "url": "localhost:4000/api/v1/admin/user/65716e5e85b8f598b0dcc0a6",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-12-07T06:42:18.084Z",
+            "modified": "2023-12-07T07:04:57.543Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d779c351-2865-4aa4-9cc6-40a854ea72c4",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "3e800cd7-6f11-4e19-8663-f08aadd80d85",
+            "name": "delete-user-by-id",
+            "url": "localhost:4000/api/v1/admin/user/delete/65716e5e85b8f598b0dcc0a6",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2023-12-07T07:01:22.319Z",
+            "modified": "2023-12-07T07:07:41.712Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "76242f4c-dbb6-4be9-a845-7e4fd22093ff",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "31ad6f2a-fe34-4d81-8c0e-ebb59fef715d",
+            "name": "create-order",
+            "url": "localhost:4000/api/v1/order/create",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2023-12-08T07:40:57.868Z",
+            "modified": "2023-12-09T07:02:03.194Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"shippingInfo\" : {\n      \"address\" : \"B-34 shona rama\",\n      \"city\": \"algerica\",\n      \"state\": \"maharashtra\",\n      \"country\": \"India\",\n      \"pinCode\": 120120,\n      \"phone\": 4128793412\n  },\n  \"orderItems\" : [\n    {\n      \"name\" : \"Keyboard\",\n      \"price\": 1000,\n      \"quantity\": 1,\n      \"image\": \"Sample keyboard\",\n      \"product\": \"65671befc9011653589db9b3\"\n  }\n  ],\n  \"user\":\"65703c76e9a21026170b7932\" ,\n  \"paymentInfo\":{\n      \"id\":\"sample payment\",\n      \"status\":\"paid\"        \n  },\n\n  \"itemsPrice\":5000,\n  \"taxPrice\":12,\n  \"shippingPrice\":50,\n  \"totalPrice\":2062,\n  \"orderStatus\": \"status\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fa76ceb7-47d6-4c12-8713-41b7d65f2794",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "31ad6f2a-fe34-4d81-8c0e-ebb59fef715d",
+            "name": "get-order-by-id",
+            "url": "localhost:4000/api/v1/order/657410eb86973d2806e0ba33",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2023-12-08T09:31:51.327Z",
+            "modified": "2023-12-09T07:02:48.810Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "42227f69-d5fc-4028-819a-dc4732d8696c",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "31ad6f2a-fe34-4d81-8c0e-ebb59fef715d",
+            "name": "delete-order",
+            "url": "localhost:4000/api/v1/admin/order/delete/6574007364424c056bc5b3db",
+            "method": "DELETE",
+            "sortNum": 155000,
+            "created": "2023-12-09T05:47:37.318Z",
+            "modified": "2023-12-09T06:00:02.320Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "18950ad3-97e5-471d-b1b1-b65eec882499",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "31ad6f2a-fe34-4d81-8c0e-ebb59fef715d",
+            "name": "get-all-orders",
+            "url": "localhost:4000/api/v1/admin/orders",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2023-12-08T09:32:12.408Z",
+            "modified": "2023-12-09T05:59:46.060Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e6b91965-3d38-4e5c-866f-3e1851c4be67",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "31ad6f2a-fe34-4d81-8c0e-ebb59fef715d",
+            "name": "get-user-order",
+            "url": "localhost:4000/api/v1/order/user",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2023-12-08T09:32:25.594Z",
+            "modified": "2023-12-08T09:33:01.189Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "789b0650-5490-43c9-b04e-09fb2d1f2c00",
+            "colId": "d2c4dd24-4212-40cc-97fb-b52aeae53fed",
+            "containerId": "31ad6f2a-fe34-4d81-8c0e-ebb59fef715d",
+            "name": "update-order",
+            "url": "localhost:4000/api/v1/admin/order/update/657410eb86973d2806e0ba33",
+            "method": "PUT",
+            "sortNum": 180000,
+            "created": "2023-12-09T06:00:22.923Z",
+            "modified": "2023-12-09T07:04:29.461Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\":\"Deleivered\"\n}",
                 "form": []
             },
             "tests": []
