@@ -4,18 +4,13 @@ import Product from './Product.js'
 import MetaData from '../layout/MetaData';
 import {getAllProduct}  from "../../action/productAction" ;
 import { useDispatch, useSelector } from 'react-redux';
+import Loader from '../Loader/Loader';
 
-const product = {
-  name:"Bule dfas",
-  images : [{url : "https://d1xv5jidmf7h0f.cloudfront.net/circleone/images/products_gallery_images/Custom-Printed-T-Shirt-Round-Neck.jpg"}],
-  price : "3000",
-  __id : "dfkslaf",
-}
+
 
 const Home = () => {
 
   const {products,error,productCount,loading} = useSelector((state) => state.products ) ;
-
   const dispatch = useDispatch() ;
   
   useEffect(()=>{
@@ -23,8 +18,10 @@ const Home = () => {
   },[dispatch])
 
   return (
-    <Fragment>
+    <Fragment > { loading ? <Loader></Loader> :  
+    ( <Fragment>
       <MetaData title="E-store"></MetaData>
+     
         <div className='banner' >
             <p>Welcome to E-store</p>
             <h1>FIND AMAZING PRODUCTS BELOW</h1>
@@ -37,11 +34,11 @@ const Home = () => {
         <h2 className='homeHeading'>Featured Products</h2>
         <div className='container' id='container'>
          
-          { products && products.map((product)=>{
-           return <Product product = {product}></Product>
-        }) } 
-        
+              { products && products.map((product)=>{
+              return <Product product = {product}></Product>
+            }) } 
         </div>
+    </Fragment>)}
     </Fragment>
   )
 }
