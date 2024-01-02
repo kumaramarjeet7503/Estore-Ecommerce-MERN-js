@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import  './Home.css' ;
 import Product from './Product.js'
 import MetaData from '../layout/MetaData';
 import {getAllProduct}  from "../../action/productAction" ;
+import { useDispatch, useSelector } from 'react-redux';
 
 const product = {
   name:"Bule dfas",
@@ -12,6 +13,15 @@ const product = {
 }
 
 const Home = () => {
+
+  const {products,error,productCount,loading} = useSelector((state) => state.products ) ;
+
+  const dispatch = useDispatch() ;
+  
+  useEffect(()=>{
+        dispatch(getAllProduct()) ;
+  },[dispatch])
+
   return (
     <Fragment>
       <MetaData title="E-store"></MetaData>
@@ -26,14 +36,11 @@ const Home = () => {
         </div>
         <h2 className='homeHeading'>Featured Products</h2>
         <div className='container' id='container'>
-          <Product product = {product}></Product>
-          <Product product = {product}></Product>
-          <Product product = {product}></Product>
-          <Product product = {product}></Product>
-          <Product product = {product}></Product>
-          <Product product = {product}></Product>
-          <Product product = {product}></Product>
-          <Product product = {product}></Product>
+         
+          { products && products.map((product)=>{
+           return <Product product = {product}></Product>
+        }) } 
+        
         </div>
     </Fragment>
   )
