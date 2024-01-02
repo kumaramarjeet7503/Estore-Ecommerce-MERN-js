@@ -4,17 +4,17 @@ import playStore from "../../../public/images/playstore.png"
 const Footer = () => {
   return (
     <footer id="footer">
-        <div class="leftFooter">
+        <div className="leftFooter">
             <h4>DOWNLOAD OUT APP</h4>
             <p> Download App for Andriod and IOS mobile phone</p>
             <img src={playStore} alt='cover' ></img>
         </div>
-        <div class="midFooter">
+        <div className="midFooter">
                 <h1 > E-STORE</h1 >
                 <p>High quality is our first priority </p>
                 <p> Copyrights 2021 &copy; lava</p>
             </div>
-            <div class="rightFooter">
+            <div className="rightFooter">
                 <h4>Follow Us</h4>
                     <a href='#'>Instagram</a>
                     <a href='#'>Youtube</a>

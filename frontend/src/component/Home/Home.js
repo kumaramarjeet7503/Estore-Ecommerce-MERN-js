@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import  './Home.css' ;
 import Product from './Product.js'
 import MetaData from '../layout/MetaData';
+import {getAllProduct}  from "../../action/productAction" ;
+
 const product = {
   name:"Bule dfas",
   images : [{url : "https://d1xv5jidmf7h0f.cloudfront.net/circleone/images/products_gallery_images/Custom-Printed-T-Shirt-Round-Neck.jpg"}],
