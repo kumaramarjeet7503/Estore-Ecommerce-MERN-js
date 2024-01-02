@@ -5,15 +5,17 @@ import MetaData from '../layout/MetaData';
 import {getAllProduct}  from "../../action/productAction" ;
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../Loader/Loader';
-
+import { useAlert } from 'react-alert';
 
 
 const Home = () => {
 
+  // const alert  = useAlert() ;
   const {products,error,productCount,loading} = useSelector((state) => state.products ) ;
   const dispatch = useDispatch() ;
   
   useEffect(()=>{
+
         dispatch(getAllProduct()) ;
   },[dispatch])
 
