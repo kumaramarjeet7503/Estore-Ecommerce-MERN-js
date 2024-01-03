@@ -1,0 +1,89 @@
+#productDetails{
+    padding: 6vmax;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+ 
+}
+
+#productDetails > div{
+    padding: 2vmax;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid black;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction : column;
+}
+
+.image{
+    width: 20vmax;
+}
+
+
+#productDetails > div:last-child {
+    align-items: flex-start;
+}
+
+.details-1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+.details-2{
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+}
+
+
+.details-4{
+    display: flex;
+}
+
+.details-4-1{
+    display: flex;
+}
+
+.details-4-2{
+    width: 100%;
+}
+
+  button{
+    padding: 10%;
+    background-color: tomato;
+    border: none;
+    text-decoration: none;
+    border-radius: 5%;
+    color: white;
+}
+
+ button:hover {
+    background-color: rgb(214, 47, 18);
+    color: white;
+}
+
+.details-4 input{
+    width: 30%;
+}
+
+.details-5{
+    display: flex;
+    margin: 1px;
+    align-items: center;
+}
+
+
+
+
+.details-6{
+    display: flex;
+    margin: 1px;
+    align-items: center;
+}
+
+ .details-7 button{
+     width: 130%;
+} 
