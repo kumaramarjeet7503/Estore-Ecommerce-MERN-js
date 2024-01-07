@@ -6,6 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './ProductDetails.css'
 import StarRatingComponent from 'react-star-rating-component';
+import ReviewCard from '../ReviewCard/ReviewCard.js' ;
 
 const ProductDetails = () => {
 
@@ -44,7 +45,7 @@ const ProductDetails = () => {
           editing={false}
           renderStarIcon={() => <span>☆</span>}
           starCount={5}
-          value={productDetail.review}
+          value={productDetail.rating}
         />
         <span>{productDetail.noofreview} Reviews</span>
         </div>
@@ -56,7 +57,7 @@ const ProductDetails = () => {
        <div className='details-4'>
        <div className='details-4-1'> 
             <button>-</button>
-            <input type='number' value={1} ></input>
+            <input type='number' min = '0'  ></input>
             <button>+</button>
         </div>
             <div className='details-4-2'>
@@ -65,7 +66,7 @@ const ProductDetails = () => {
        </div>
 
        <div className='details-5'>
-        <h3>Status: </h3>
+        <h3>Status:  </h3>
             <p className={productDetail.stock > 1 ? "redColor" : "greenColor" } >{productDetail.stock > 1 ? " Out of stock" : " In stock" }</p>
        </div>
 
@@ -79,7 +80,21 @@ const ProductDetails = () => {
        </div>
        </div>
         </div>
-
+       <div className='reviewheading'><h2>Reviews</h2></div>
+       { productDetail.reviews && productDetail.reviews[0] ? (
+            <div className='reviews'>
+                {
+                ( productDetail.reviews &&   productDetail.reviews.map((item)=>{
+                      return  <ReviewCard review = {item}></ReviewCard>
+                    }))
+                }
+            </div>
+       ) : ( 
+       <div className='noreview'>
+            <h3>No reviews yet</h3>
+       </div> )
+           
+       }
     </Fragment>
   )
 }

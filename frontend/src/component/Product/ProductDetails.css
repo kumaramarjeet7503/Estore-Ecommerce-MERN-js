@@ -1,6 +1,5 @@
 #productDetails{
     padding: 6vmax;
-    width: 100vw;
     max-width: 100%;
     display: flex;
  
@@ -10,7 +9,6 @@
     padding: 2vmax;
     width: 100%;
     max-width: 100%;
-    border: 1px solid black;
     justify-content: space-evenly;
     align-items: center;
     box-sizing: border-box;
@@ -36,6 +34,10 @@
     font-size: xx-large;
     display: flex;
     align-items: center;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    width: 70%;
+    padding: 1vmax 0;
 }
 
 
@@ -45,24 +47,36 @@
 
 .details-4-1{
     display: flex;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.details-4-1 input{
+    margin: 0.05vmax;
 }
 
 .details-4-2{
     width: 100%;
 }
 
-  button{
+.details-4-2 button{
+ 
+}
+
+ button{
     padding: 10%;
     background-color: tomato;
     border: none;
     text-decoration: none;
-    border-radius: 5%;
+    border-radius: 10%;
     color: white;
+    transition: all 0.5s;
 }
 
  button:hover {
     background-color: rgb(214, 47, 18);
     color: white;
+    cursor: pointer;
 }
 
 .details-4 input{
@@ -73,6 +87,10 @@
     display: flex;
     margin: 1px;
     align-items: center;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    width: 70%;
+    padding: 1vmax 0;
 }
 
 
@@ -84,6 +102,54 @@
     align-items: center;
 }
 
- .details-7 button{
-     width: 130%;
-} 
+.details-7 button{
+    width: 130%;
+    padding: 1vmax 0;
+}
+
+
+.noreview{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: grey;
+    text-align: center;
+}
+
+.reviewcard{
+    border: 1px solid black;
+    flex: none;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 20vw;
+    margin: 1vmax;
+    padding: 3vmax;
+    box-shadow: 0 0 5px black;
+}
+
+.reviewcard > p{
+    font-family: cursive;
+
+}
+
+.reviewcard > h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.reviewcard > img{
+   display: block;
+   width: 5vmax;
+   margin: auto;
+}
+
+.reviews{
+    display: flex;
+    overflow: auto;
+}
+
+.reviewheading{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    text-decoration: underline;
+}
