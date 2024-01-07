@@ -7,6 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './ProductDetails.css'
 import StarRatingComponent from 'react-star-rating-component';
 import ReviewCard from '../ReviewCard/ReviewCard.js' ;
+import Loader from '../Loader/Loader';
 
 const ProductDetails = () => {
 
@@ -20,7 +21,7 @@ const ProductDetails = () => {
 
 
   return (
-    <Fragment>
+    <Fragment > { loading ? <Loader></Loader> : (  <Fragment >
         <div className="carousel-wrapper" id='productDetails'>
         <div>
        <Carousel infiniteLoop useKeyboardArrows autoPlay>
@@ -43,7 +44,7 @@ const ProductDetails = () => {
         <StarRatingComponent 
           name="rate2" 
           editing={false}
-          renderStarIcon={() => <span>☆</span>}
+          renderStarIcon={() => <span>★</span>}
           starCount={5}
           value={productDetail.rating}
         />
@@ -94,7 +95,8 @@ const ProductDetails = () => {
             <h3>No reviews yet</h3>
        </div> )
            
-       }
+       }</Fragment>
+       )}
     </Fragment>
   )
 }

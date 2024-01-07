@@ -99,3 +99,7 @@
     box-shadow: 0 0 5px black;
     transform:  translateY(-1vmax);
 }
+
+#searchIcon{
+    background-color: red;
+}

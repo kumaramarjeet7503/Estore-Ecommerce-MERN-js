@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
 import  './Home.css' ;
-import Product from './Product.js'
+import ProductCard from './ProductCard.js'
 import MetaData from '../layout/MetaData';
 import {getAllProduct}  from "../../action/productAction" ;
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,7 +37,7 @@ const Home = () => {
         <div className='container' id='container'>
          
               { products && products.map((product)=>{
-              return <Product product = {product}></Product>
+              return <ProductCard product = {product}></ProductCard>
             }) } 
         </div>
     </Fragment>)}
